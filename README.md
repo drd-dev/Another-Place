@@ -20,4 +20,4 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## License
 
-This project is licensed under the MIT License - see the [https://github.com/zeoxo/Paintings/blob/master/LICENSE](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/zeoxo/Paintings/blob/master/LICENSE) file for details

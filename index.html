@@ -6,17 +6,14 @@
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs>
         <a-assets>
-            <a-asset-item id ="apple" src="model.obj"></a-asset-item>
-            <a-asset-item id="material" src="materials.mtl"></a-asset-item>
+            <a-asset-item id ="apple" src="models/test.obj"></a-asset-item>
+            <a-asset-item id="material" src="models/test.mtl"></a-asset-item>
 
         </a-assets>
-      <a-marker preset="hiro">
-        <a-obj-model src="#apple" mtl="#material"></a-obj-model>
+      <a-marker preset='custom' type='pattern' url='patterns/forest.patt'>
+        <a-obj-model position='0 -1.0 0' src="#apple" mtl="#material"></a-obj-model>
       </a-marker>
-
-    <a-marker preset="kanji">
-    </a-marker>
-      <a-entity camera></a-entity>
+        <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>

@@ -5,27 +5,22 @@
         <meta charset="utf-8">
         <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
         <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+        <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
+
         
     </head>   
     <body style='margin : 0px; overflow: hidden;' >
         <a-scene embedded arjs="debugUIEnabled: false;" antialias="true">
             <a-assets>
-                <a-asset-item id ="forest" src="models/forest.obj"></a-asset-item>
-                <a-asset-item id="forest_mat" src="models/forest.mtl"></a-asset-item>
 
-                <a-asset-item id ="camp" src="models/camp.obj"></a-asset-item>
-                <a-asset-item id="camp_mat" src="models/camp.mtl"></a-asset-item>
+                <a-asset-item id ="camp" src="models/camp.glb"></a-asset-item>
 
             </a-assets>
            
-        <!-- Test model for hole in the wall -->
-          <a-marker preset='custom' type='pattern' url='patterns/forest.patt'>
-            <a-obj-model position='0 -1.0 0' scale ='1 1 1' src="#forest" mtl="#forest_mat"></a-obj-model>
-          </a-marker>
 
         <!-- swamp camp model, lays flat on top of the marker -->
           <a-marker preset='hiro'>
-            <a-obj-model position='0 -1.0 0' scale='2 2 2' src="#camp" mtl="#camp_mat"></a-obj-model>
+            <a-entity gltf-model="#camp" animation-mixer ></a-entity>
           </a-marker>
           <a-entity camera></a-entity>
         </a-scene>

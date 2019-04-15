@@ -6,6 +6,8 @@
         <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
         <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
         <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
+        <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script> 
+
 
         
     </head>   
@@ -19,9 +21,11 @@
            
 
         <!-- swamp camp model, lays flat on top of the marker -->
-          <a-marker preset='hiro'>
+<!--          <a-marker preset='custom' type='pattern' url='patterns/forest.patt'>-->
+        <a-marker preset="hiro">
             <a-entity gltf-model="#camp" animation-mixer ></a-entity>
-          </a-marker>
+            <a-entity position="0 0 -15" particle-system="preset: rain" color="#00CAC0,#00CAC0"></a-entity>
+        </a-marker>
           <a-entity camera></a-entity>
         </a-scene>
     

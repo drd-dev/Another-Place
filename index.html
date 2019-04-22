@@ -1,4 +1,9 @@
- <!doctype HTML>
+<!--
+Paintings:
+An AR Experiment by Dylan Dougherty 2019
+-->
+
+<!doctype HTML>
 <html>
     <head>
         <title>Paintings</title>
@@ -24,14 +29,36 @@
 <!--          <a-marker preset='custom' type='pattern' url='patterns/forest.patt'>-->
         <a-marker preset="hiro">
             <a-entity gltf-model="#camp" animation-mixer ></a-entity>
-            <a-entity position="0 0 -15" particle-system="preset: rain; color: #00CAC0,#00CAC0"; size: 20;></a-entity>
-             <a-entity position="0 0 -1" particle-system="preset: snow; 
-                                                          size: 0.1; 
+            
+            <a-entity position="0 0 -15" particle-system="preset: rain; color: #00CAC0,#00CAC0"; rotationAngle: 3.14; size: 20;></a-entity>
+<!--            orange leaves-->
+             <a-entity position=".25 .5 -.32" particle-system="preset: dust; 
                                                           texture:./particles/square.jpg; 
-                                                          size: 20; 
+                                                          size: 0.1; 
+                                                          type: 2;
                                                           color: #FFCB00;
-                                                          velocitySpread: 0, 0, 0;
+                                                          rotationAngle: 180;
+                                                          velocityValue: 0, 0, 0;
+                                                          velocityValue: 0, 0, 0;
+                                                          positionSpread: .5, .5, .5;
                                                           blending: 1;
+                                                          accelerationValue: 0, 0, 0;
+             "></a-entity>
+<!--            red leaves-->
+             <a-entity position=".73 .25 .9" particle-system="preset: dust; 
+                                                          texture:./particles/square.jpg; 
+                                                          maxAge: 6;
+                                                          size: 0.1; 
+                                                          type: 2;
+                                                          color: #ff471a;
+                                                          dragValue: .5;
+                                                          dragSpread: 1;
+                                                          dragRandomise: true;
+                                                          rotationAngle: 180;
+                                                          positionSpread: .3, .3, .3;
+                                                          blending: 1;
+                                                          accelerationValue: 0, 0, 0;
+                                                          rotationAngleSpread: 3;
              "></a-entity>
         </a-marker>
           <a-entity camera></a-entity>

@@ -30,7 +30,7 @@ An AR Experiment by Dylan Dougherty 2019
         <a-marker preset="hiro">
             <a-entity gltf-model="#camp" animation-mixer ></a-entity>
             
-            <a-entity position="0 0 -15" particle-system="preset: rain; color: #00CAC0,#00CAC0"; rotationAngle: 3.14; size: 20;></a-entity>
+            <a-entity position="0 0 -15" particle-system="preset: rain; color: #00CAC0,#00CAC0; size: 1"; rotationAngle: 3.14; size: 20;></a-entity>
 <!--            orange leaves-->
              <a-entity position=".25 .5 -.32" particle-system="preset: dust; 
                                                           texture:./particles/square.jpg; 
@@ -42,6 +42,8 @@ An AR Experiment by Dylan Dougherty 2019
                                                           velocityValue: 0, 0, 0;
                                                           positionSpread: .5, .5, .5;
                                                           blending: 1;
+                                                          velocityValue: .15 .1 .2;
+                                                          velocitySpread: .25 .25 .25;
                                                           accelerationValue: 0, 0, 0;
              "></a-entity>
 <!--            red leaves-->
@@ -57,8 +59,28 @@ An AR Experiment by Dylan Dougherty 2019
                                                           rotationAngle: 180;
                                                           positionSpread: .3, .3, .3;
                                                           blending: 1;
+                                                          velocityValue: .15 .1 .2;
+                                                          velocitySpread: .25 .25 .25;
                                                           accelerationValue: 0, 0, 0;
                                                           rotationAngleSpread: 3;
+             "></a-entity>
+<!--            campfire smoke-->
+             <a-entity position="-.07 0 .8" particle-system="preset: dust; 
+                                                          texture:./particles/square.jpg; 
+                                                          maxAge: 2;
+                                                          particleCount: 100;
+                                                          size: 0.2; 
+                                                          type: 2;
+                                                          color: #ff7f00, #d6d8db, #d6d8db, #d6d8db;
+                                                          rotationAngle: 90;
+                                                          positionSpread: .1 .1 .1;
+                                                          blending: 1;
+                                                          accelerationValue: 0 0 0;
+                                                          accelerationSpread: 0 0 0;
+                                                          velocityValue: .15 -.15 .2;
+                                                          velocitySpread: .1 .1 .1;
+                                                          rotationAngleSpread: 10;
+                                                          opacity: 0.5;
              "></a-entity>
         </a-marker>
           <a-entity camera></a-entity>

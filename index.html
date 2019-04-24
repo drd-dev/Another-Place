@@ -17,7 +17,7 @@ An AR Experiment by Dylan Dougherty 2019
         
     </head>   
     <body style='margin : 0px; overflow: hidden;' >
-        <a-scene embedded arjs="debugUIEnabled: false;" antialias="true">
+        <a-scene embedded arjs="debugUIEnabled: false;" antialias="false" vr-mode-ui="enabled: false">>
             <a-assets>
 
                 <a-asset-item id ="camp" src="models/camp.glb"></a-asset-item>
@@ -31,9 +31,9 @@ An AR Experiment by Dylan Dougherty 2019
             <a-entity gltf-model="#camp" animation-mixer ></a-entity>
             
             <a-entity position="0 0 -15" particle-system="preset: rain; color: #00CAC0,#00CAC0; size: 1"; rotationAngle: 3.14; size: 20;></a-entity>
-<!--            orange leaves-->
+<!--         orange leaves-->
              <a-entity position=".25 .5 -.32" particle-system="preset: dust; 
-                                                          texture:./particles/square.jpg; 
+                                                          texture:./particles/square.png; 
                                                           size: 0.1; 
                                                           type: 2;
                                                           color: #FFCB00;
@@ -46,9 +46,9 @@ An AR Experiment by Dylan Dougherty 2019
                                                           velocitySpread: .25 .25 .25;
                                                           accelerationValue: 0, 0, 0;
              "></a-entity>
-<!--            red leaves-->
+<!--         red leaves-->
              <a-entity position=".73 .25 .9" particle-system="preset: dust; 
-                                                          texture:./particles/square.jpg; 
+                                                          texture:./particles/square.png; 
                                                           maxAge: 6;
                                                           size: 0.1; 
                                                           type: 2;
@@ -64,9 +64,9 @@ An AR Experiment by Dylan Dougherty 2019
                                                           accelerationValue: 0, 0, 0;
                                                           rotationAngleSpread: 3;
              "></a-entity>
-<!--            campfire smoke-->
+<!--         campfire smoke-->
              <a-entity position="-.07 0 .8" particle-system="preset: dust; 
-                                                          texture:./particles/square.jpg; 
+                                                          texture:./particles/hexagon.png; 
                                                           maxAge: 2;
                                                           particleCount: 100;
                                                           size: 0.2; 
@@ -74,7 +74,7 @@ An AR Experiment by Dylan Dougherty 2019
                                                           color: #ff7f00, #d6d8db, #d6d8db, #d6d8db;
                                                           rotationAngle: 90;
                                                           positionSpread: .1 .1 .1;
-                                                          blending: 1;
+                                                          blending: 2;
                                                           accelerationValue: 0 0 0;
                                                           accelerationSpread: 0 0 0;
                                                           velocityValue: .15 -.15 .2;

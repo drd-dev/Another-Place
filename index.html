@@ -6,99 +6,136 @@ An AR Experiment by Dylan Dougherty 2019
 <!doctype HTML>
 <html>
     <head>
-        <title>Paintings</title>
+        <title>Another Place - Info</title>
         <meta charset="utf-8">
-        <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-        <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
-        <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
-        <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script> 
+        <link href="https://fonts.googleapis.com/css?family=Gugi|Roboto+Mono" rel="stylesheet"> 
+    </head>
 
+    <body>
+        <div class="page">
+            <div class="title">
+                Another Place
+                <p class="subHeader">A Web AR Experiment <span style="color: #8EE4AF">By Dylan Dougherty</span> </p>
+            </div>
+            <div class="content">
+                <div class="what">
+                    <p class="header">What</p>
+                    <p>Another place is a mobile experiment built for the mobile web browser.
+                            It displays a custom 3D model ontop of a defined AR marker inside of the phone's web browers by using the camera and various sensors built into the device.
+                    </p>
+                </div>
+                <div class="how">
+                    <p class="header">How</p>
+                    <p>This experiment runs on <a href="https://github.com/jeromeetienne/AR.js/blob/master/README.md">AR.JS</a>, a powerful and light-weight augmented reality library for the web. AR.JS utilizes the motion tracking capabilities
+                        of <a href="https://aframe.io/">Aframe.io</a>, and the 3D rendering of <a href="https://threejs.org/">Three.js</a>. It then adds additional marker tracking that utilizes the device's camera to
+                        display content ontop of markers in the real world. The model for this experiment was created and animated in <a href="https://www.blender.org/">Blender</a> and then exported as an .glb file for use in AR.JS. All source files
+                        can be found in the <a href="https://github.com/zeoxo/Another-Place">Github Repo</a> and are available for free under the <a href="https://opensource.org/licenses/MIT">MIT license</a>.
+                    
+                    </p>
+                </div>
+                <div class="images">
+                    <p class="header">Examples</p>
+                    <img class="example-img" src="images/AR1.png" alt="Another World image 1">
+                    <img class="example-img" src="images/AR2.png" alt="Another World image 2">
+                    <video width="300" height="600" controls>
+                            <source src="images/ARVid.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                    </video>       
+                </div>
+                <div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/22b94ed50b974cfd8409b9236af8131a/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-        
-    </head>   
-    <body style='margin : 0px; overflow: hidden;' >
-        <a-scene embedded arjs="debugUIEnabled: false;" antialias="false" vr-mode-ui="enabled: false">>
-            <a-assets>
+                    <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                        <a href="https://sketchfab.com/3d-models/camp-22b94ed50b974cfd8409b9236af8131a?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Camp</a>
+                        by <a href="https://sketchfab.com/zeoxo?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">zeoxo</a>
+                        on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+                    </p>
+                </div>
+                <div class="try-it">
+                    <p class="header">Try It Yourself</p>
+                    <p>
+                        You can run this Another Place on your own phone by scanning the QR code below on your mobile device's camera, or navigating to <a href="ar.html">This Website</a>
+                        then pointing your phone at <a href="images/hiro.png">This image</a> either by printing it out (for best results) or on your computer's monitor.
+                    </p>
+                </div>
+            </div>
 
-                <a-asset-item id ="camp" src="models/camp.glb"></a-asset-item>
-
-            </a-assets>
-           
-
-        <!-- swamp camp model, lays flat on top of the marker -->
-<!--          <a-marker preset='custom' type='pattern' url='patterns/forest.patt'>-->
-        <a-marker preset="hiro">
-            <a-entity gltf-model="#camp" animation-mixer ></a-entity>
-            
-            <a-entity position="0 0 -15" particle-system="preset: rain; color: #00CAC0,#00CAC0; size: 1"; rotationAngle: 3.14; size: 20;></a-entity>
-<!--         orange leaves-->
-             <a-entity position=".25 .5 -.32" particle-system="preset: dust; 
-                                                          texture:./particles/square.png; 
-                                                          size: 0.1; 
-                                                          type: 2;
-                                                          color: #FFCB00;
-                                                          rotationAngle: 180;
-                                                          velocityValue: 0, 0, 0;
-                                                          velocityValue: 0, 0, 0;
-                                                          positionSpread: .5, .5, .5;
-                                                          blending: 1;
-                                                          velocityValue: .15 .1 .2;
-                                                          velocitySpread: .25 .25 .25;
-                                                          accelerationValue: 0, 0, 0;
-             "></a-entity>
-<!--         red leaves-->
-             <a-entity position=".73 .25 .9" particle-system="preset: dust; 
-                                                          texture:./particles/square.png; 
-                                                          maxAge: 6;
-                                                          size: 0.1; 
-                                                          type: 2;
-                                                          color: #ff471a;
-                                                          dragValue: .5;
-                                                          dragSpread: 1;
-                                                          dragRandomise: true;
-                                                          rotationAngle: 180;
-                                                          positionSpread: .3, .3, .3;
-                                                          blending: 1;
-                                                          velocityValue: .15 .1 .2;
-                                                          velocitySpread: .25 .25 .25;
-                                                          accelerationValue: 0, 0, 0;
-                                                          rotationAngleSpread: 3;
-             "></a-entity>
-<!--         campfire smoke-->
-             <a-entity position="-.07 0 .8" particle-system="preset: dust; 
-                                                          texture:./particles/hexagon.png; 
-                                                          maxAge: 2;
-                                                          particleCount: 100;
-                                                          size: 0.2; 
-                                                          type: 2;
-                                                          color: #ff7f00, #d6d8db, #d6d8db, #d6d8db;
-                                                          rotationAngle: 90;
-                                                          positionSpread: .1 .1 .1;
-                                                          blending: 2;
-                                                          accelerationValue: 0 0 0;
-                                                          accelerationSpread: 0 0 0;
-                                                          velocityValue: .15 -.15 .2;
-                                                          velocitySpread: .1 .1 .1;
-                                                          rotationAngleSpread: 10;
-                                                          opacity: 0.5;
-             "></a-entity>
-        </a-marker>
-          <a-entity camera></a-entity>
-        </a-scene>
-    
+        </div>
     </body>
-    
-    <script>
-document.addEventListener('DOMContentLoaded', function(evt) {
-
-    var sceneEl = document.querySelector('a-scene');
-
-    sceneEl.addEventListener('loaded', function(evt) {
-        var newCamera = new THREE.PerspectiveCamera();
-        newCamera.near = 1;
-        newCamera.far = 100;
-        sceneEl.camera = newCamera;
-    });
-});
-    </script>
 </html>
+
+
+<style>
+
+    html{
+        padding: 0px;
+        margin: 0px;
+        background-color: #379683;
+    }
+
+    .page{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        color: #EDF5E1;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-content: left;
+        width: 50%;
+    }
+    .title{
+        font-family: 'Gugi', cursive;
+        font-size: 65px;
+        margin-bottom: 60px;
+    }
+    p{
+        font-family: 'Roboto Mono', monospace;
+        padding-left: 30px;
+    }
+
+    .header{
+        font-family: 'Gugi', cursive;
+        font-size: 30px;
+        text-align: left;
+        width: 100%;
+        padding: 2px;
+        padding-left: 0px;
+        margin: 0px;
+        margin-top: 50px;
+        border-bottom: 2px solid #05386b;
+        color: #EDF5E1;
+    }
+
+    .images{
+        text-align: center;
+    }
+
+    .example-img, video{
+        width: 300px;
+        height: 600px;
+        padding: 5px;
+        margin: 0px auto;
+    }
+
+    a{
+        text-decoration: none;
+        color: #8EE4AF;
+    }
+
+    .subHeader{
+        text-align: center;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 15px;
+        padding-top: 0px;
+        margin-top: 0px;
+        color: #5CDB95;
+    }
+
+    .sketchfab-embed-wrapper{
+        text-align: center;
+    }
+
+</style>
